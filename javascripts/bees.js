@@ -105,27 +105,9 @@
     };
 
     Bee.prototype.draw = function(ctx) {
-      var h, kappa, ox, oy, w, x, xe, xm, y, ye, ym;
       ctx.fillStyle = "#FFE92B";
       ctx.strokeStyle = "#000";
-      w = 10;
-      h = 6;
-      x = this.location.x;
-      y = this.location.y;
-      kappa = .5522848;
-      ox = (w / 2) * kappa;
-      oy = (h / 2) * kappa;
-      xe = x + w;
-      ye = y + h;
-      xm = x + w / 2;
-      ym = y + h / 2;
-      ctx.beginPath();
-      ctx.moveTo(x, ym);
-      ctx.bezierCurveTo(x, ym - oy, xm - ox, y, xm, y);
-      ctx.bezierCurveTo(xm + ox, y, xe, ym - oy, xe, ym);
-      ctx.bezierCurveTo(xe, ym + oy, xm + ox, ye, xm, ye);
-      ctx.bezierCurveTo(xm - ox, ye, x, ym + oy, x, ym);
-      ctx.closePath();
+      ctx.ellipse(this.location.x, this.location.y, 10, 6);
       ctx.stroke();
       return ctx.fill();
     };

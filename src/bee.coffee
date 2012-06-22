@@ -77,34 +77,8 @@ class Bee
     @acceleration = new Vector(0, 0)
 
   draw: (ctx) ->
-    #ctx.fillStyle = ctx.strokeStyle = "#fff"
     ctx.fillStyle = "#FFE92B"
     ctx.strokeStyle = "#000"
-
-    w = 10
-    h = 6
-    x = @location.x
-    y = @location.y
-
-    kappa = .5522848
-    ox = (w / 2) * kappa
-    oy = (h / 2) * kappa
-    xe = x + w
-    ye = y + h
-    xm = x + w / 2
-    ym = y + h / 2
-
-    ctx.beginPath()
-    ctx.moveTo(x, ym)
-    ctx.bezierCurveTo(x, ym - oy, xm - ox, y, xm, y)
-    ctx.bezierCurveTo(xm + ox, y, xe, ym - oy, xe, ym)
-    ctx.bezierCurveTo(xe, ym + oy, xm + ox, ye, xm, ye)
-    ctx.bezierCurveTo(xm - ox, ye, x, ym + oy, x, ym)
-    ctx.closePath()
-
-    # do ctx.beginPath
-    # ctx.arc @location.x, @location.y, @radius, 0, Math.PI * 2, true
-    # do ctx.closePath
-
+    ctx.ellipse @location.x, @location.y, 10, 6
     do ctx.stroke
     do ctx.fill
