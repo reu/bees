@@ -4,7 +4,7 @@ printOut = (error, output) ->
   throw error if error
   process.stdout.write output
 
-outputFile = "public/bees.js"
+outputFile = "javascripts/bees.js"
 
 task "watch", ->
   watch = exec "coffee -j #{outputFile} -cw src/"
