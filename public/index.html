@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>oh noes bees!</title>
+    <style type="text/css">
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #000
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="bees" width="1024" height="768"></canvas>
+  </body>
+
+  <script src="zepto.min.js"></script>
+  <script src="vector.js"></script>
+  <script src="bees.js"></script>
+  <script>
+    Zepto(function($) {
+      var simulation = new Simulation();
+      simulation.start();
+    });
+  </script>
+</html>
